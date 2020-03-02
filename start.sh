@@ -1,6 +1,6 @@
 cd dash
 npm install
-npm build
+npm run build
 
 cd ..
 npm install
