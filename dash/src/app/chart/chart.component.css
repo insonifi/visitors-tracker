@@ -1,0 +1,23 @@
+.header {
+	color: darkgray;
+}
+
+.dash {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.indicator {
+	align-items: center;
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.indicator span {
+	color: gray;
+}
+
+.chart-box {
+	display: flex;
+	justify-content: center;
+}

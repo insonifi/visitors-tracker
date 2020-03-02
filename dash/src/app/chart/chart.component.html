@@ -1,0 +1,29 @@
+<h1 class="header">Page: {{ page }}</h1>
+
+<div class="dash">
+	<div class="indicator">
+		<h1>{{ recent }}</h1>
+		<span>Active users in last 30 minutes</span>
+	</div>
+	<div class="indicator">
+		<h1>{{ (returns * 100).toFixed(2) }}%</h1>
+		<span>Returning user rate within 1 day</span>
+	</div>
+</div>
+
+<div class="chart-box">
+	<ngx-charts-bar-vertical
+		[view]="view"
+		[scheme]="colorScheme"
+		[results]="single"
+		[gradient]="gradient"
+		[xAxis]="showXAxis"
+		[yAxis]="showYAxis"
+		[legend]="showLegend"
+		[showXAxisLabel]="showXAxisLabel"
+		[showYAxisLabel]="showYAxisLabel"
+		[xAxisLabel]="xAxisLabel"
+		[yAxisLabel]="yAxisLabel"
+	>
+	</ngx-charts-bar-vertical>
+</div>

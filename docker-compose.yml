@@ -1,0 +1,27 @@
+version: '3'
+services:
+  httpd:
+    command: sh start.sh
+    depends_on:
+      - mongo
+    environment:
+      - DEBUG=*
+      - DB_USER=root
+      - DB_PASSWORD=example
+    image: node
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/workdir
+    links:
+      - mongo
+    working_dir: /workdir
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+      - MONGO_INITDB_DATABASE=test
+    volumes:
+      - ./data:/data
