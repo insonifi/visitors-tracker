@@ -1,6 +1,6 @@
 cd dash
 npm install
-npx ng build
+npm build
 
 cd ..
 npm install
