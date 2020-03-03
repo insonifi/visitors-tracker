@@ -19,7 +19,7 @@ export class VisitorsMiddleware implements NestMiddleware {
 		this.lookupCountry = await maxmind.open<CountryResponse>(require('maxmind-country'));
 	}
   use(req: Request, res: Response, next: () => void) {
-		if (!req.get('Accept').includes('html')) {// TODO: find better way to determine page load
+		if (!req.accepts('html')) {// TODO: find better way to determine page load
 			next();
 
 			return;
