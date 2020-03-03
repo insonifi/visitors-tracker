@@ -37,7 +37,7 @@ export class VisitorsMiddleware implements NestMiddleware {
 		const countryResult = this.lookupCountry.get(req.ip);
 		const visitor = {
 			browser: useragent.parse(req.get('User-Agent')).family,
-			country: countryResult ? countryResult.country['iso-code'] : UKNOWN,
+			country: countryResult ? countryResult.country.names.en : UKNOWN,
 			id,
 			timestamp: new Date(),
 			path: req.path.split('/')[1],// take first folder part from path
